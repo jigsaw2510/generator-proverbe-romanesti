@@ -1,6 +1,6 @@
 const quoteContainer = document.getElementById('quote-container');
 const quoteText = document.getElementById('quote');
-const twitterBtn = document.getElementById('twitter');
+const facebookBtn = document.getElementById('facebook');
 const newQuoteBtn = document.getElementById('new-quote');
 const loader = document.getElementById('loader');
 
@@ -56,13 +56,13 @@ function newQuote() {
 
 // Tweet Quote
 function tweetQuote() {
-    const twitterUrl = `https://twitter.com/intent/tweet?text=${quoteText.textContent}`;
-    window.open(twitterUrl, '_blank');
+    const facebookUrl = `https://twitter.com/intent/tweet?text=${quoteText.textContent}`;
+    window.open(facebookUrl, '_blank');
 }
 
 // Event Listeners
 newQuoteBtn.addEventListener('click', newQuote);
-twitterBtn.addEventListener('click', tweetQuote);
+facebookBtn.addEventListener('click', tweetQuote);
 
 // On Load
 // getQuotes();
