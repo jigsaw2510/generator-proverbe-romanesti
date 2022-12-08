@@ -2,6 +2,7 @@ const quoteContainer = document.getElementById('quote-container');
 const quoteText = document.getElementById('quote');
 const facebookBtn = document.getElementById('facebook');
 const newQuoteBtn = document.getElementById('new-quote');
+const copyTextBtn = document.getElementById('copy-text')
 const loader = document.getElementById('loader');
 
 
@@ -63,6 +64,21 @@ function tweetQuote() {
 // Event Listeners
 newQuoteBtn.addEventListener('click', newQuote);
 facebookBtn.addEventListener('click', tweetQuote);
+copyTextBtn.addEventListener('click', copyToClipboard)
+
+// Copy to clipboard function
+
+
+
+function copyToClipboard() {
+    var copyText = document.getElementById("quote");
+    var textArea = document.createElement("textarea");
+    textArea.value = copyText.textContent;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand("Copy");
+    textArea.remove();
+}
 
 // On Load
 // getQuotes();

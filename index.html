@@ -10,6 +10,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId            : '1978282255698803',
+            autoLogAppEvents : true,
+            xfbml            : true,
+            version          : 'v15.0'
+          });
+        };
+      </script>
+      <div id="fb-root"></div>
+      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v15.0&appId=1978282255698803&autoLogAppEvents=1" nonce="qvKXPoYv"></script>
     <div class="quote-container" id="quote-container">
         <!-- Quote -->
         <div class="quote-text">
@@ -21,8 +33,12 @@
             <button class="facebook-button" id="facebook" title="Post This!">
                 <i class="fa-brands fa-square-facebook"></i>
             </button>
+            <div class="fb-share-button" data-href="https://jigsaw2510.github.io/generator-proverbe-romanesti/" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2Fgavrila.catalin.509&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+            <!-- The button used to copy the text -->
+            <button id="copy-text">Copy text</button>
             <button id="new-quote">New Quote</button>
         </div>
+        
     </div>
     <!-- Loader -->
     <div class="loader" id="loader"></div>
