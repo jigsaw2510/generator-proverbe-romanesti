@@ -40,44 +40,26 @@ function newQuote() {
     complete();
 }
 
-// Get Quotes from API
-
-// async function getQuotes() {
-//     loading();
-//     // const apiUrl = 'https://jacintodesign.github.io/quotes-api/data/quotes.json';
-//     const apiUrl = 'https://type.fit/api/quotes';
-//     try {
-//         const response = await fetch(apiUrl);
-//         apiQuotes = await response.json();
-//         newQuote();
-//     } catch (error) {
-//         // Catch Error Here
-//     }
-// }
-
-// Tweet Quote
-// function tweetQuote() {
-//     const facebookUrl = `https://twitter.com/intent/tweet?text=${quoteText.textContent}`;
-//     window.open(facebookUrl, '_blank');
-// }
-
 // Event Listeners
 newQuoteBtn.addEventListener('click', newQuote);
-// facebookBtn.addEventListener('click', tweetQuote);
 copyTextBtn.addEventListener('click', copyToClipboard)
 
 // Copy to clipboard function
 
 
 
+// function copyToClipboard() {
+//     var copyText = document.getElementById("quote");
+//     var textArea = document.createElement("textarea");
+//     textArea.value = copyText.textContent;
+//     document.body.appendChild(textArea);
+//     textArea.select();
+//     document.execCommand("Copy");
+//     textArea.remove();
+// }
+
 function copyToClipboard() {
-    var copyText = document.getElementById("quote");
-    var textArea = document.createElement("textarea");
-    textArea.value = copyText.textContent;
-    document.body.appendChild(textArea);
-    textArea.select();
-    document.execCommand("Copy");
-    textArea.remove();
+    navigator.clipboard.writeText(quoteText.textContent);
 }
 
 // On Load
